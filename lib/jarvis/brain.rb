@@ -13,9 +13,19 @@ class Brain
   end
 
   def remember
-    # Store conversation into long-term memory
-    File.open('./memory.yml', 'w') do |file|
-      file.write(@memory.to_yaml)
+    # If there is already data in the file. (Do not overwrite it)
+    if (File.read('./memory.yml'))
+      @memory.concat YAML.load_file('./memory.yml') # Load and combine previous data.
+
+      # Write new data to memory file.
+      File.open('./memory.yml', 'w') do |file|
+        file.write(@memory.to_yaml)
+      end
+    else
+      # Store conversation into long-term memory
+      File.open('./memory.yml', 'w') do |file|
+        file.write(@memory.to_yaml)
+      end
     end
   end
 end
