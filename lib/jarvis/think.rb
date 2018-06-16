@@ -6,6 +6,7 @@ require_relative './sad.rb'
 class Think
   class << self
     def process(input)
+      # Placeholder logic until I develop the real deal.
       if (input == 'hello')
         puts 'Hello!'
       else
