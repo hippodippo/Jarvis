@@ -1,0 +1,3 @@
+class Angry
+
+end
