@@ -1,4 +1,5 @@
-require 'think.rb'
+require 'yaml'
+require_relative './think.rb'
 
 class Brain
   def initialize
@@ -8,19 +9,13 @@ class Brain
   def listen(input)
     @memory.push(input) # store into short-term memory.
 
-    # Think.process(input)
-
-    if (input == 'hello')
-      puts 'Hello!'
-    else
-      puts 'What?'
-    end
+    Think.process(input)
   end
 
   def remember
     # Store conversation into long-term memory
     File.open('./memory.yml', 'w') do |file|
-      file.write(input)
+      file.write(@memory.to_yaml)
     end
   end
 end

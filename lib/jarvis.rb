@@ -1,4 +1,4 @@
-require './jarvis/brain'
+require_relative './jarvis/brain.rb'
 
 module Jarvis
   class << self
