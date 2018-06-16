@@ -15,8 +15,9 @@ module Jarvis
         input = gets.chomp.downcase # Convert input to lowercase.
 
         if (input == 'bye')
-          # Remember conversation for future conversations and learning.
+          # Remember conversation for future learning.
           brain.remember()
+          puts 'See ya!'
           break
         end
 
