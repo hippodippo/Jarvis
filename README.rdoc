@@ -1,1 +1,6 @@
 = \Jarvis, a simple AI written in the Ruby programming language.
+
+\To use or improve Jarvis, download the zip file and once you are in the directory run:
+ruby lib/jarvis.rb
+
+\Cheers, Kaycee Ingram
